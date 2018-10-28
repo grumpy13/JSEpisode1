@@ -6,6 +6,11 @@
  */
 function greet(name) {
   // Your code here
+  if (name) {
+    console.log(`Hello ${name}`);
+  } else {
+    console.log("Hello");
+  }
 }
 
 /**
@@ -15,6 +20,11 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 === 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 /**
@@ -30,6 +40,13 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  let count = 0;
+  // for (let i = 0; i < n; i++) {
+  //   if (isOdd(i)) {
+  //     count++;
+  //   }
+  // }
+  return count;
 }
 
 /**
@@ -44,6 +61,11 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (isOdd(n)) {
+    return n * n;
+  } else {
+    return n * 2;
+  }
 }
 
 /**
@@ -65,6 +87,28 @@ function squareOrDouble(n) {
  */
 function ageFromCivilID(civilID) {
   // Your code here
+  let currentDate = new Date();
+  // currentDate = currentDate.toString();
+  let currentYear = currentDate.getFullYear();
+  // currentYear = 2018;
+
+  // Converting the number of millisecond in date string
+  let century = "";
+
+  if (civilID[0] === "1") {
+    century = "18";
+  } else if (civilID[0] === "2") {
+    century = "19";
+  } else if (civilID[0] === "3") {
+    century = "20";
+  }
+
+  let year = civilID.slice(1, 3);
+  let fullYear = century + year;
+
+  let age = Math.floor(parseInt(currentYear, 10) - parseInt(fullYear, 10));
+
+  return age;
 }
 
 /**
@@ -80,6 +124,8 @@ function ageFromCivilID(civilID) {
  */
 function canVoteInKuwait(civilID, isKuwaiti, isRoyal) {
   // Your code here
+  // let age = ageFromCivilID(civilID);
+  // if(age >= 21 && isKuwaiti === true && )
 }
 
 module.exports = {
